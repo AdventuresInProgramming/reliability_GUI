@@ -10,6 +10,9 @@ It helps MRO engineers perform the following:
 2. Two population comparison - see if they are distinct populations
 3. Optimal Replacement calculations to balance Corrective and Preventive Maintenance
 
+Other Libraries used:
+- pandas, matplotlib
+
 General Instructions for using:
 
 Input your reliability data as excel workbooks, xlsx
@@ -31,7 +34,8 @@ https://reliability.readthedocs.io/en/latest/Converting%20data%20between%20diffe
 
 Extra Info concerning Operations:
 
-1. One population analysis
+1. One population analysis:
+
     Select the distribution to test from the dropdown menu
     If not sure, test all samples the loglikelihood and returns a popup box.
     You can view the probabilities from there and see which to use first
@@ -48,12 +52,14 @@ Extra Info concerning Operations:
     The output is shown in the files tab under output.xlsx as a default.
     it contains the ranges of parameters as well as the likelihood figure if you are interested.
 
-2. Two Population Comparison
+2. Two Population Comparison:
+
     Select the distributions to use from the dropdown menu
     Click on generate graph and the programme will calculate. the graph should show up in the window.
     Saving the graphs can be done from the pop-up graph window
 
-3. Optimal Replacement
+3. Optimal Replacement:
+
     insert the parameters. no excel file is needed
 
 """
