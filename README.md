@@ -1,37 +1,59 @@
-# reliability_GUI
-this creates a simple GUI for relaibility work
+"""
+this file describes the operations of main.py
 
-the underlying calculations are based on the work of the excellent reliability module
+The purpose is to create a simple Graphical User Interface for non-programmers to use the reliability library
 
-import your failure data in an exel format
+https://reliability.readthedocs.io/en/latest/index.html
 
-column 1, row 1 = 'failure data'
-column 1, rows 2 - x = enter your failure data in units of measurement
-eg operating hours, FH, EOT, or other unit
-do not include units!
+It helps MRO engineers perform the following:
+1. One population analysis - regression testing of failure/success data for one population
+2. Two population comparison - see if they are distinct populations
+3. Optimal Replacement calculations to balance Corrective and Preventive Maintenance
 
-column 2, row 2 = 'suspended data'
-column 2, row 2 -x = enter your suspended data in units of measurement
+General Instructions for using:
 
-the columns do not need to be equal in lenght. the script will handle it
+Input your reliability data as excel workbooks, xlsx
 
-name your file as 'input.xlsx'
+The data should be in the FR format:
 
-drag and drop into the file location
+    column 1, row 1 = 'failure data'
+    column 1, rows 2 - x = enter your failure data in units of measurement
+    column 2, row 2 = 'suspended data'
+    column 2, row 2 -x = enter your suspended data in units of measurement
 
-click run on the top of the screen
+Units of measurement are operating hours or whatever custom unit you use
+Do not include the unit, the entry must be in numerical format (float or int)
 
-after loading for some time, you should see a GUI window pop up
+The columns do not need to be equal in length. the script will handle it
 
-file location: default is input.xlsx
-confidence bounds: how wide the range is for x% of the observations to come from there
+Full details at:
+https://reliability.readthedocs.io/en/latest/Converting%20data%20between%20different%20formats.html
 
-drop down menu - select weibull 2P, weibull 3P, log normal or test all.
+Extra Info concerning Operations:
 
-test all - samples the log likeihood to tell you which distribution is more likely to generate it
+1. One population analysis
+    Select the distribution to test from the dropdown menu
+    If not sure, test all samples the loglikelihood and returns a popup box.
+    You can view the probabilities from there and see which to use first
 
-click on generate graph and the programme will calculate. the graph should show up in the window. cross hairs are enabled and mouse clicking will label the points. the parameters are shown in the graph for the shape and scale parameter.
+    Confidence bounds: how wide the range is for x% of the observations to come from there
 
-the output is shown in the files tab under output.xlsx as a default. it contains the ranges of parameters as well as the likelihood figure if you are interested.
+    Force Parameter is applicable to weibull 2P, normal 2P and lognormal 2P, should you wish to force beta or sigma
+
+    Click on generate graph and the programme will calculate. the graph should show up in the window.
+    Cross hairs are enabled and mouse clicking will label the points.
+    The parameters are shown in the graph for the shape and scale parameter.
+    Saving the graphs can be done from the pop-up graph window
+
+    The output is shown in the files tab under output.xlsx as a default.
+    it contains the ranges of parameters as well as the likelihood figure if you are interested.
+
+2. Two Population Comparison
+    Select the distributions to use from the dropdown menu
+    Click on generate graph and the programme will calculate. the graph should show up in the window.
+    Saving the graphs can be done from the pop-up graph window
+
+3. Optimal Replacement
+    insert the parameters. no excel file is needed
 
 """
